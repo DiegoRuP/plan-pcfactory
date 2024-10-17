@@ -27,19 +27,19 @@ Esta es una pequeño libro creado para desarrollar a detalle las decisiones tecn
 
 Generación del Dockerfile 
 
-```make install```
+`make install`
 
 Generación del libro
 
-```make html```
+`make html`
 
 Generación del libro en formato PDF
 
-```make pdf```
+`make pdf`
 
 Iniciar el servidor web
 
-```make server```
+`make server`
 
 == Licencia
 
