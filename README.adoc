@@ -1,0 +1,47 @@
+= Planificación para PCFactory
+
+Esta es una pequeño libro creado para desarrollar a detalle las decisiones tecnológicas y de negocio que se tomaron para el desarrollo de la aplicación web de PCFactory.
+
+== Contenido que se abordará
+
+1. Selección de servidor
+2. Selección y diseño de base de datos
+3. Diseño de endpoint Rest
+4. Estimación de costos de servidor y operación
+5. Selección de tecnologia de frontend
+6. Selección de tecnologia de backend
+7. Selección de profesionales necesarios
+8. Estimación de tiempo de desarrollo
+
+== Tecnologías utilizadas
+
+* Docker
+* ASCIIDOCTOR
+* Python3
+
+== Autores
+
+* Diego Ruan Padilla
+
+== Comandos
+
+Generación del Dockerfile 
+
+```make install```
+
+Generación del libro
+
+```make html```
+
+Generación del libro en formato PDF
+
+```make pdf```
+
+Iniciar el servidor web
+
+```make server```
+
+== Licencia
+
+Este libro es de uso libre y puede ser distribuido y modificado por cualquier persona. 
+
