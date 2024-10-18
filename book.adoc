@@ -1,0 +1,85 @@
+= Planificación PCFactory
+Diego Ruan Padilla <ruan.padilla.diego@gmail.com>
+:doctype: book
+:encoding: utf-8
+:numbered:
+:icons: font
+:username: clsource
+:source: https://github.com/NinjasCL/asciidoc-book-template
+:producer: Diego Ruan Padilla
+:copyright: CC-BY-NC-SA 4.0
+:lang: es
+:description: A book about something.
+:keywords: web, mobile, programación, lenguaje, referencia
+:data-uri:
+:allow-uri-read:
+:imagesdir: book/
+:epub-chapter-level: 2
+:toc: left
+:toclevels: 3
+:ext-relative:
+:source-linenums-option:
+:source-highlighter: highlight.js
+:highlightjs-languages: css, javascript, markdown, ruby, wren, elixir, erlang, swift, rust, python, yaml
+:highlightjs-theme: srcery
+:highlightjsdir: highlight
+:stem: latexmath
+:stylesheet: resources/style.css
+// Optional Translations
+// :appendix-caption: Anexo
+// :appendix-refsig: {appendix-caption}
+// :example-caption: Ejemplo
+// :figure-caption: Figura
+// :caution-caption: Precaución
+// :important-caption: Importante
+// :tip-caption: Sugerencia
+// :note-caption: Nota
+// :warning-caption: Aviso
+// :chapter-label: Capítulo
+// :last-update-label: Última actualización
+// ifdef::listing-caption[:listing-caption: Lista]
+// ifdef::preface-title[:preface-title: Prefacio]
+// :table-caption: Tabla
+// :toc-title: Tabla de Contenido
+// :untitled-label: Sin título
+// :version-label: Versión
+// Github Icons
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:outfilesuffix: .adoc
+:!toc-title:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+// PDF Only Configs
+ifdef::backend-pdf[]
+:front-cover-image: image:../../resources/images/cover-asal-lotfi-8ePZbdxnpi0-unsplash.jpg[fit=fill]
+// :back-cover-image: image:resources/images/cover-asal-lotfi-8ePZbdxnpi0-unsplash.jpg[fit=fill]
+:imagesdir: docs/.asciidoctor
+:imagesoutdir: docs/.asciidoctor
+:toc: macro
+endif::[]
+
+////
+Organize your book chapter by chapter in chapters.adoc and appendices.adoc
+////
+
+ifdef::backend-pdf[]
+toc::[]
+endif::[]
+
+ifdef::backend-pdf[]
+include::book/index.adoc[]
+endif::[]
+
+include::docs/asciidoc/index.adoc[]
+include::docs/asciidoc/tecnologias.adoc[]
+include::docs/asciidoc/arquitectura.adoc[]
+include::docs/asciidoc/personas.adoc[]
+include::docs/asciidoc/estimaciones.adoc[]
+include::docs/asciidoc/costos.adoc[]
+include::docs/asciidoc/plazos.adoc[]
+include::docs/asciidoc/alcance.adoc[]

@@ -2,8 +2,6 @@
 
 == Persona Positiva: Cliente Leal
 
-image::../assets/images/persona-positiva.avif[Persona Positiva,200,100]
-
 - *Nombre:* Fernando
 - *Edad:* 30 años
 - *Ocupación:* Diseñador gráfico
@@ -25,8 +23,6 @@ image::../assets/images/persona-positiva.avif[Persona Positiva,200,100]
 
 == Persona Negativa: Cliente Desconfiado
 
-image::../assets/images/persona-negativa.avif[Persona Positiva,200,100]
-
 - *Nombre:* Carla
 - *Edad:* 45 años
 - *Ocupación:* Profesora
@@ -47,7 +43,7 @@ image::../assets/images/persona-negativa.avif[Persona Positiva,200,100]
 
 == User Journey
 
-[plantuml, user-journey-diagram, png]
+[plantuml]
 ----
 @startuml
 title User Journey - PCFactory
