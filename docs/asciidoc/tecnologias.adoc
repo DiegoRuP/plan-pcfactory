@@ -56,63 +56,63 @@ Utilizaremos *PostgreSQL* como sistema de gestión de bases de datos relacional 
 
 === Diagrama de base de datos (DBML)
 
-[source, mermaid]
+[plantuml]
 ----
-erDiagram
-  Producto {
-    int id PK
-    string nombre
-    string descripcion
-    decimal precio
-    string categoria
-    string marca
-  }
+@startuml
+entity Producto {
+    +int id
+    +string nombre
+    +string descripcion
+    +decimal precio
+    +string categoria
+    +string marca
+}
 
-  Cliente {
-    int id PK
-    string nombre
-    string apellido
-    string email
-    string telefono
-    string direccion
-  }
+entity Cliente {
+    +int id
+    +string nombre
+    +string apellido
+    +string email
+    +string telefono
+    +string direccion
+}
 
-  Venta {
-    int id PK
-    date fecha
-    Cliente cliente
-    Usuario usuario
-    Sucursal sucursal
-  }
+entity Venta {
+    +int id
+    +date fecha
+    +Cliente cliente
+    +Usuario usuario
+    +Sucursal sucursal
+}
 
-  Sucursal {
-    int id PK
-    string nombre
-    string direccion
-    string telefono
-  }
+entity Sucursal {
+    +int id
+    +string nombre
+    +string direccion
+    +string telefono
+}
 
-  Inventario {
-    int id PK
-    Producto producto
-    Sucursal sucursal
-    int cantidad
-  }
+entity Inventario {
+    +int id
+    +Producto producto
+    +Sucursal sucursal
+    +int cantidad
+}
 
-  Usuario {
-    int id PK
-    string nombreUsuario
-    string contrasena
-    Sucursal sucursal
-  }
+entity Usuario {
+    +int id
+    +string nombreUsuario
+    +string contrasena
+    +Sucursal sucursal
+}
 
-  Producto ||--|{ Inventario : contiene
-  Cliente ||--|{ Venta : realiza
-  Venta ||--|{ Usuario : realizada_por
-  Venta ||--|{ Sucursal : en_sucursal
-  Inventario ||--|{ Sucursal : en_sucursal
-  Usuario ||--|{ Sucursal : trabaja_en 
-  
+Producto ||--|{ Inventario : contiene
+Cliente ||--|{ Venta : realiza
+Venta ||--|{ Usuario : realizada_por
+Venta ||--|{ Sucursal : en_sucursal
+Inventario ||--|{ Sucursal : en_sucursal
+Usuario ||--|{ Sucursal : trabaja_en
+@enduml
 ----
 
 == Diseño de endpoint REST
@@ -164,17 +164,18 @@ Adoptaremos un enfoque RESTful para diseñar los endpoints de la API, utilizando
 
 === Diagrama de endpoints
 
-[source,mermaid]
+[plantuml]
 ----
-sequenceDiagram
-    participant Cliente
-    participant LoadBalancer
-    participant Servidor
-    participant BaseDatos
+@startuml
+actor Cliente
+participant LoadBalancer
+participant Servidor
+participant BaseDatos
 
-    Cliente->>LoadBalancer: GET /api/productos
-    LoadBalancer->>Servidor: Forward
-    Servidor->>BaseDatos: Consulta productos
-    BaseDatos-->>Servidor: Resultados
-    Servidor-->>Cliente: HTTP 200, JSON
+Cliente -> LoadBalancer : GET /api/productos
+LoadBalancer -> Servidor : Forward
+Servidor -> BaseDatos : Consulta productos
+BaseDatos --> Servidor : Resultados
+Servidor --> Cliente : HTTP 200, JSON
+@enduml
 ----

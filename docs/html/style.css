@@ -8,12 +8,12 @@
 /* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
 :root{
 --maincolor:#282c34;
---primarycolor:#f39c12;
+--primarycolor:#8ABFA3;
 --secondarycolor:#03a9f4;
---tertiarycolor:#4db6ac;
---sidebarbackground:#21252b;
---linkcolor:#f44336;
---linkcoloralternate:#ff9800;
+--tertiarycolor:#FFE6A5;
+--sidebarbackground:#282c34;
+--linkcolor:#36a8f4;
+--linkcoloralternate:#5642ca;
 --white:#FFFFFF;
 }
 
