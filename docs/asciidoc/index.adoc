@@ -1,0 +1,9 @@
+= Planificación de ECommerce para PC Factory
+
+== Información General
+
+Una tienda de partes de computación y productos tecnológicos. Tiene varias sucursales por todo Chile. Se debe diseñar un sistema que permita a sus vendedores realizar las ventas en cada tienda. Además de solicitar productos a otras tiendas cuando el producto no este disponible.
+
+* Nivel de presupuesto: Medio
+* Estimación de transacciones al día: 10,000
+* Estimación de transacciones al día (Máximo): 100,000

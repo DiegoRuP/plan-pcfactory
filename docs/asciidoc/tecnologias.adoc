@@ -1,0 +1,199 @@
+= Justificación de las tecnologías utilizadas
+
+== Selección de servidor
+
+=== EC2 de AWS
+Utilizaremos *EC2* (Elastic Compute Cloud) de *AWS* (Amazon Web Services) como proveedor de servicios en la nube para alojar la aplicación PCFactory
+
+=== Justificación
+* *Flexibilidad:* EC2 ofrece una amplia variedad de tipos de instancias con diferentes configuraciones de CPU, memoria y almacenamiento, lo que nos permite ajustar los recursos a las necesidades específicas de nuestra aplicación en cualquier momento.
+
+* *Escalabilidad:* EC2 nos permite escalar verticalmente (aumentar o disminuir la capacidad de una instancia) y horizontalmente (agregar o quitar instancias) de manera rápida y sencilla, lo que garantiza que nuestra aplicación pueda manejar un gran volumen de tráfico.
+
+* *Seguridad:* EC2 proporciona una amplia gama de herramientas y servicios de seguridad, como firewalls, cifrado de datos y monitoreo de la red, que nos permiten proteger nuestra aplicación y los datos de los usuarios.
+
+* *Disponibilidad:* EC2 garantiza una alta disponibilidad de nuestra aplicación mediante la distribución de instancias en múltiples zonas de disponibilidad y la configuración de balanceadores de carga para distribuir el tráfico de manera equitativa.
+
+* *Madurez:* EC2 es uno de los servicios de computación en la nube más antiguos y populares del mercado, lo que garantiza su estabilidad, confiabilidad y soporte continuo por parte de AWS. 
+
+=== Consideraciones adicionales
+* *Tipos de instancias:* Utilizaremos instancias de tipo *t3.medium* para el servidor de aplicaciones y *rds.db.t3.medium* para la base de datos, ya que ofrecen un equilibrio óptimo entre rendimiento, costo y recursos.
+
+* *Autoescalado:* Implementaremos autoescalado para ajustar automáticamente la capacidad de las instancias en función de la demanda de tráfico, lo que nos permitirá optimizar los costos y garantizar la disponibilidad de la aplicación en todo momento.
+
+* *Respaldo de datos:* Configuraremos copias de seguridad automáticas de la base de datos en *S3* (Simple Storage Service) para garantizar la integridad y disponibilidad de los datos en caso de fallos o pérdidas.
+
+== Selección y diseño de base de datos
+
+=== PostgresSQL
+Utilizaremos *PostgreSQL* como sistema de gestión de bases de datos relacional (RDBMS) para almacenar la información de productos, ventas, clientes y otras entidades relevantes para el negocio de PCFactory.
+
+=== Justificación
+* *Rendimiento:* PostgreSQL es un _RDBMS_ maduro que permite modelar de manera eficiente las relaciones entre las entidades de negocio, como productos, clientes y pedidos.
+
+* *Transaccionalidad:* Ofrece un alto nivel de consistencia y seguridad gracias a sus características transaccionales, lo que es de suma importancia para un sistema de ventas donde la integridad de los datos es crítica.
+
+* *Escalabilidad:* PostgreSQL es altamente escalable y puede manejar grandes volúmenes de datos y transacciones concurrentes, lo que garantiza que nuestra aplicación pueda crecer y adaptarse a las necesidades del negocio.
+
+* *Comunidad:* Cuenta con una gran comunidad de usuarios, lo que facilita encontrar soluciones a problemas y obtener soporte.
+
+=== Diseño de la base de datos:
+
+* *Entidades:* Definiremos las siguientes entidades principales:
+  - *Productos:* Información detallada de los productos disponibles en la tienda.
+  - *Clientes:* Datos de los clientes que realizan compras en la tienda.
+  - *Ventas:* Registro de las transacciones de venta realizadas por los vendedores.
+  - *Sucursales:* Información de las sucursales de PCFactory en todo Chile.
+  - *Inventario:* Registro de los productos disponibles en cada sucursal.
+  - *Usuarios:* Datos de los usuarios que tienen acceso al sistema de ventas.
+
+* *Relaciones:* Estableceremos las siguientes relaciones entre las entidades: 
+  - *Productos <-> Inventario:* Relación uno a muchos para asociar los productos disponibles en cada sucursal.
+  - *Clientes <-> Ventas:* Relación uno a muchos para asociar las ventas realizadas por cada cliente.
+  - *Usuarios <-> Sucursales:* Relación muchos
+
+* *Normalización:* Aplicaremos las reglas de normalización para evitar redundancia y garantizar la integridad de los datos.
+
+=== Diagrama de base de datos (DBML)
+
+[source, mermaid]
+----
+erDiagram
+  Producto {
+    int id PK
+    string nombre
+    string descripcion
+    decimal precio
+    string categoria
+    string marca
+  }
+
+  Cliente {
+    int id PK
+    string nombre
+    string apellido
+    string email
+    string telefono
+    string direccion
+  }
+
+  Venta {
+    int id PK
+    date fecha
+    Cliente cliente
+    Usuario usuario
+    Sucursal sucursal
+  }
+
+  Sucursal {
+    int id PK
+    string nombre
+    string direccion
+    string telefono
+  }
+
+  Inventario {
+    int id PK
+    Producto producto
+    Sucursal sucursal
+    int cantidad
+  }
+
+  Usuario {
+    int id PK
+    string nombreUsuario
+    string contrasena
+    Sucursal sucursal
+  }
+
+  Producto ||--|{ Inventario : contiene
+  Cliente ||--|{ Venta : realiza
+  Venta ||--|{ Usuario : realizada_por
+  Venta ||--|{ Sucursal : en_sucursal
+  Inventario ||--|{ Sucursal : en_sucursal
+  Usuario ||--|{ Sucursal : trabaja_en 
+  
+----
+
+== Diseño de endpoint REST
+
+=== API RESTful
+
+Adoptaremos un enfoque RESTful para diseñar los endpoints de la API, utilizando HTTP methods y URLs significativas para representar las operaciones CRUD (Create, Read, Update, Delete) sobre los recursos de nuestra aplicación.
+
+=== Justificación
+
+* *Simplicidad:* REST es un estilo de arquitectura simple y fácil de entender, que utiliza los métodos HTTP estándar (GET, POST, PUT, DELETE) para realizar operaciones sobre los recursos de la aplicación.
+
+* *Estandar de la industria:* REST es un estándar de la industria ampliamente utilizado en el desarrollo de APIs, lo que facilita la integración con otras aplicaciones y servicios.
+
+* *Escalabilidad:* REST es altamente escalable y permite la creación de APIs flexibles y modulares, que pueden adaptarse a los cambios en los requisitos del negocio.
+
+* *Compatibilidad:* REST es compatible con la mayoría de los lenguajes de programación y frameworks, lo que nos permite implementar la API en cualquier tecnología que elijamos.
+
+=== Diseño de endpoints
+
+* *Recursos:* Identifiacremos los recursos principales de la aplicación, como productos, clientes, ventas, sucursales, inventario y usuarios.
+
+* *Métodos HTTP:* Utilizaremos los siguientes métodos HTTP para realizar operaciones CRUD sobre los recursos:
+  - *GET:* Obtener información de un recurso o una colección de recursos.
+  - *POST:* Crear un nuevo recurso.
+  - *PUT:* Actualizar un recurso existente.
+  - *DELETE:* Eliminar un recurso existente.
+
+* *Formato de datos:* Utilizaremos JSON como formato de intercambio de datos para las peticiones y respuestas de la API, ya que es ligero, legible y ampliamente compatible.
+
+=== Consideraciones adicionales
+
+* *Versionamiento:* Implementaremos versionamiento en la API para garantizar la compatibilidad con versiones anteriores y futuras de la aplicación.
+
+* *Autenticación y autorización:* Utilizaremos mecanismos de autenticación y autorización, como tokens JWT (JSON Web Tokens) y roles de usuario, para proteger los endpoints y restringir el acceso a los recursos.
+
+* *Paginación y filtros:* Implementaremos paginación y filtros en los endpoints para manejar grandes volúmenes de datos y mejorar el rendimiento de la API.
+
+* *Logs y monitoreo:* Configuraremos logs y monitoreo en la API para rastrear las peticiones, identificar errores y mejorar la seguridad y el rendimiento de la aplicación.
+
+=== Ejemplos de endpoints
+
+* *Obtener todos los productos:*
+  - *GET /api/productos* (Obtener todos los productos disponibles)
+  - *GET /api/productos/{id}* (Obtener un producto específico)
+  - *POST /api/productos* (Crear un nuevo producto)
+  - *PUT /api/productos/{id}* (Actualizar un producto existente)
+  - *DELETE /api/productos/{id}* (Eliminar un producto existente)
+
+=== Diagrama de endpoints
+
+[source,mermaid]
+----
+sequenceDiagram
+    participant Cliente
+    participant LoadBalancer
+    participant Servidor
+    participant BaseDatos
+
+    Cliente->>LoadBalancer: GET /api/productos
+    LoadBalancer->>Servidor: Forward
+    Servidor->>BaseDatos: Consulta productos
+    BaseDatos-->>Servidor: Resultados
+    Servidor-->>Cliente: HTTP 200, JSON
+----
+
+== Diagrama de Clases
+
+[source,mermaid]
+----
+classDiagram
+    class Producto {
+        int id
+        string nombre
+        -- otros atributos --
+    }
+    class Cliente {
+        -- atributos --
+    }
+    -- ... otras clases ...
+    Producto <|-- Venta
+    Cliente <-- Venta
+    -- ... otras relaciones ...
+----
