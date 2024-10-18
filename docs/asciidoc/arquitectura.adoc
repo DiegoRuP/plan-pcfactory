@@ -1,0 +1,136 @@
+= Arquitectura de la aplicación de PCFactory
+
+== Arquitectura de la aplicación
+
+=== Frontend
+
+_React o Vue.js_: Se utilizará un framework de frontend moderno para el desarrollo de la aplicación web. Se utilizará React o Vue.js, ya que son los frameworks más populares y con mayor soporte en la actualidad.
+
+=== Backend
+
+_Node.js con Express_: Se utilizará Node.js como entorno de ejecución para el backend de la aplicación. Se utilizará Express como framework web para el desarrollo de la API RESTful.
+
+=== Base de datos
+
+_PostgreSQL_: Se utilizará PostgreSQL para gestionar la información de productos, clientes,pedidos e inventario.
+
+=== Infraestructura
+
+_EC2 de AWS_: Se utilizará Amazon EC2 para alojar la aplicación web y la base de datos en la nube. EC2 proporciona una infraestructura escalable y segura para ejecutar aplicaciones web de alta disponibilidad.
+
+=== Diagrama de arquitectura
+
+==== Diagrama de Contexto
+
+[plantuml, context-diagram, png]
+....
+@startuml
+title Diagrama de Contexto
+
+actor Cliente as cliente
+actor Vendedor as vendedor
+
+cliente --> (Aplicación Web PCFactory) : Realiza compras
+vendedor --> (Aplicación Web PCFactory) : Gestiona ventas y pedidos
+
+(Aplicación Web PCFactory) --> (API PCFactory) : Solicitud de datos
+(API PCFactory) --> (Base de Datos) : Consultas/Inserciones de productos, clientes y pedidos
+
+@enduml
+....
+
+=== Diagrama de Contenedores
+
+[plantuml, container-diagram, png]
+....
+@startuml
+title Diagrama de Contenedores
+
+actor Cliente as cliente
+actor Vendedor as vendedor
+
+node "Cliente" {
+    [Navegador Web] --> [Aplicación Web (React o Vue.js)] : HTTP/S
+}
+
+node "Backend" {
+    [API REST (Node.js con Express)] --> [Base de Datos (PostgreSQL)] : Consultas SQL
+}
+
+cloud "AWS EC2" {
+    [Aplicación Web (React o Vue.js)] --> [API REST (Node.js con Express)] : HTTP/S
+    [API REST (Node.js con Express)] --> [Base de Datos (PostgreSQL)] : Conexión SQL
+}
+
+cliente --> [Navegador Web] : Interacción de usuario
+vendedor --> [Navegador Web] : Gestión de ventas e inventario
+
+@enduml
+....
+
+=== Diagrama de Componentes
+
+[plantuml, component-diagram, png]
+....
+@startuml
+title Diagrama de Componentes
+
+node "Frontend (Aplicación Web)" {
+    [Navegador Web] --> [Frontend (React/Vue.js)] : Realiza solicitudes HTTP/S
+}
+
+node "Backend (API REST)" {
+    [API Gateway (Express)] --> [Controlador de Productos] : Gestiona productos
+    [API Gateway (Express)] --> [Controlador de Clientes] : Gestiona clientes
+    [API Gateway (Express)] --> [Controlador de Pedidos] : Gestiona pedidos
+
+    [Controlador de Productos] --> [Servicio de Productos] : Lógica de negocio
+    [Controlador de Clientes] --> [Servicio de Clientes] : Lógica de negocio
+    [Controlador de Pedidos] --> [Servicio de Pedidos] : Lógica de negocio
+
+    [Servicio de Productos] --> [Base de Datos (PostgreSQL)] : Consultas SQL
+    [Servicio de Clientes] --> [Base de Datos (PostgreSQL)] : Consultas SQL
+    [Servicio de Pedidos] --> [Base de Datos (PostgreSQL)] : Consultas SQL
+}
+
+Frontend (React/Vue.js) --> API Gateway (Express) : Solicitudes HTTP/S
+API Gateway (Express) --> Base de Datos (PostgreSQL) : Consultas SQL
+
+@enduml
+....
+
+=== Diagrama de Código
+
+[plantuml, code-diagram, png]
+....
+@startuml
+title Diagrama de Código
+
+package "Controlador de Productos" {
+    class ProductosController {
+        + getAllProducts()
+        + getProductById(id)
+        + createProduct(data)
+    }
+}
+
+package "Servicio de Productos" {
+    class ProductosService {
+        + findAllProducts()
+        + findProductById(id)
+        + saveProduct(data)
+    }
+}
+
+package "Repositorio" {
+    class ProductRepository {
+        + executeQuery(query)
+    }
+}
+
+ProductosController --> ProductosService : Llama métodos de servicio
+ProductosService --> ProductRepository : Ejecuta consultas a la base de datos
+
+@enduml
+....
+
