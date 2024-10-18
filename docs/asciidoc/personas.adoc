@@ -2,7 +2,7 @@
 
 == Persona Positiva: Cliente Leal
 
-image::positiva.png[Positiva,link=https://img.freepik.com/vector-gratis/ilustracion-dedos-cruzados-dibujados-mano_23-2150212632.jpg?t=st=1729216984~exp=1729220584~hmac=543d30ab07e19b16e4b047e57aa0703817ca7a96f929bf1059fed2f2b1286043&w=1060]
+image:positiva.png[Positiva,link=https://img.freepik.com/vector-gratis/ilustracion-dedos-cruzados-dibujados-mano_23-2150212632.jpg?t=st=1729216984~exp=1729220584~hmac=543d30ab07e19b16e4b047e57aa0703817ca7a96f929bf1059fed2f2b1286043&w=1060]
 
 - *Nombre:* Fernando
 - *Edad:* 30 años
@@ -25,7 +25,7 @@ image::positiva.png[Positiva,link=https://img.freepik.com/vector-gratis/ilustrac
 
 == Persona Negativa: Cliente Desconfiado
 
-image::negativa.png[Negativa,link=https://img.freepik.com/vector-gratis/ilustracion-dibujada-mano-palma-mano_23-2150212659.jpg?t=st=1729217204~exp=1729220804~hmac=9bf0e115257283b01f4c5ea642c598553f7d7d72cb0d12546fcdfc9f1544c27f&w=1060]
+image:negativa.png[Negativa,link=https://img.freepik.com/vector-gratis/ilustracion-dibujada-mano-palma-mano_23-2150212659.jpg?t=st=1729217204~exp=1729220804~hmac=9bf0e115257283b01f4c5ea642c598553f7d7d72cb0d12546fcdfc9f1544c27f&w=1060]
 
 
 - *Nombre:* Carla
