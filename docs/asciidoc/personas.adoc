@@ -1,0 +1,51 @@
+= Personas 
+
+== Persona Positiva: Cliente Leal
+
+.Persona Positiva
+[#img-positiva,link=https://www.freepik.es/vector-gratis/ilustracion-dedos-cruzados-dibujados-mano_38680373.htm#fromView=keyword&page=1&position=1&uuid=7fcb0a94-e806-41f6-a490-b44be2f2262e]
+image::positivo.jpg[Positivo,200,100]
+
+- *Nombre:* Fernando
+- *Edad:* 30 años
+- *Ocupación:* Diseñador gráfico
+- *Motivación:* 
+    * Busca un computador para trabajar en su casa
+    * Aprovechar descuentos y promociones
+    * Obtener asesoramiento en la compra
+- *Comportamiento:* 
+    * Busca información en la web
+    * Compara precios y características
+    * Realiza la compra en línea
+    * Se comunica con el vendedor para aclarar dudas
+- *Necesidades:*
+    * Información clara y detallada de los productos
+    * Facilidad para comparar precios y características
+    * Asesoramiento personalizado
+    * Proceso de compra sencillo y seguro
+
+
+== Persona Negativa: Cliente Desconfiado
+
+.Persona Negativa
+
+[#img-negativa,link=https://www.freepik.es/vector-gratis/ilustracion-dibujada-mano-palma-mano_38680328.htm]
+image::negativo.jpg[Negativo,200,100]
+
+- *Nombre:* Carla
+- *Edad:* 45 años
+- *Ocupación:* Profesora
+- *Motivación:* 
+    * Desconfianza en las compras en línea
+    * Miedo a ser estafada
+    * Preferencia por la compra presencial
+- *Comportamiento:*
+    * Visita la tienda física para ver los productos
+    * Consulta precios en línea
+    * Realiza la compra en la tienda física
+    * Evita proporcionar información personal en línea
+- *Necesidades:*
+    * Ver y probar los productos antes de comprar
+    * Sentirse segura y protegida en la compra
+    * Evitar proporcionar información personal en línea
+    * Atención personalizada en la tienda física
