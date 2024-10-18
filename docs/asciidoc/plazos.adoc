@@ -1,0 +1,27 @@
+= Estimación de plazos para desarrollo
+
+[cols="2,1", options="header"]
+|===
+| Fase                          | Duración Estimada
+
+| Recolección de Requerimientos  | 2 semanas
+| Diseño del Sistema (UI/UX, Arquitectura) | 3 semanas
+| Desarrollo del Backend (Node.js, Express, PostgreSQL) | 6-8 semanas
+| Desarrollo del Frontend (React o Vue.js)  | 5-6 semanas
+| Integración del Sistema (Frontend + Backend) | 2 semanas
+| Pruebas Funcionales y No Funcionales | 3 semanas
+| Despliegue en AWS y Ajustes Finales | 2 semanas
+
+| Total Aproximado | 20-24 semanas (~5-6 meses)
+|===
+
+== Resumen
+
+*Profesionales:* Un equipo de 9-10 personas incluyendo Frontend, Backend, DBA, DevOps, UX/UI, QA, Project Manager y Seguridad.
+*Plazo de Implementación:* Aproximadamente 5-6 meses.
+*Costos Estimados para Infraestructura:*
+    - Entorno Bajo: $1,050 a $1,750 USD/mes.
+    - Entorno Normal: $3,200 a $4,700 USD/mes.
+    - Entorno Crítico: $6,800 a $9,800 USD/mes.
+
+

@@ -23,7 +23,7 @@ _EC2 de AWS_: Se utilizará Amazon EC2 para alojar la aplicación web y la base 
 ==== Diagrama de Contexto
 
 [plantuml, context-diagram, png]
-....
+----
 @startuml
 title Diagrama de Contexto
 
@@ -37,12 +37,12 @@ vendedor --> (Aplicación Web PCFactory) : Gestiona ventas y pedidos
 (API PCFactory) --> (Base de Datos) : Consultas/Inserciones de productos, clientes y pedidos
 
 @enduml
-....
+----
 
 === Diagrama de Contenedores
 
 [plantuml, container-diagram, png]
-....
+----
 @startuml
 title Diagrama de Contenedores
 
@@ -66,12 +66,12 @@ cliente --> [Navegador Web] : Interacción de usuario
 vendedor --> [Navegador Web] : Gestión de ventas e inventario
 
 @enduml
-....
+----
 
 === Diagrama de Componentes
 
 [plantuml, component-diagram, png]
-....
+----
 @startuml
 title Diagrama de Componentes
 
@@ -97,12 +97,12 @@ Frontend (React/Vue.js) --> API Gateway (Express) : Solicitudes HTTP/S
 API Gateway (Express) --> Base de Datos (PostgreSQL) : Consultas SQL
 
 @enduml
-....
+----
 
 === Diagrama de Código
 
 [plantuml, code-diagram, png]
-....
+----
 @startuml
 title Diagrama de Código
 
@@ -132,5 +132,5 @@ ProductosController --> ProductosService : Llama métodos de servicio
 ProductosService --> ProductRepository : Ejecuta consultas a la base de datos
 
 @enduml
-....
+----
 

@@ -1,0 +1,43 @@
+= Estimaciones de profesionales
+
+== Profesionales necesarios 
+
+a. Desarrollador Frontend (React o Vue.js) - 1 o 2 profesionales
+   - *Responsabilidades:* Implementar el frontend utilizando React o Vue.js, asegurando que el sistema sea responsive y fácil de usar tanto para los vendedores como para el cliente en la web. Además estar a la vanguardia de las tecnologías y tendencias en el desarrollo frontend.
+
+   - *Habilidades:* Conocimientos avanzados en React o Vue.js, HTML, CSS, JavaScript, Responsive Design, manejo de APIs RESTful, Git.
+
+b. Desarrollador Backend (Node.js con Express) - 2 o 3 profesionales
+    - *Responsabilidades:* Implementar el backend utilizando Node.js con Express, diseñar y desarrollar la API RESTful, gestionar la base de datos PostgreSQL, asegurar la escalabilidad y seguridad de la aplicación.
+    
+    - *Habilidades:* Conocimientos avanzados en Node.js, Express, JavaScript, RESTful APIs, PostgreSQL, Git, Docker, AWS.
+
+c. Administrador de Base de Datos - 1 profesional
+    - *Responsabilidades:* Diseñar y gestionar la base de datos PostgreSQL, asegurar la integridad y disponibilidad de los datos, optimizar las consultas y el rendimiento de la base de datos.
+    
+    - *Habilidades:* Conocimientos avanzados en PostgreSQL, SQL, modelado de datos, optimización de consultas, seguridad de bases de datos y entornos en la nube.
+
+d. DevOps Engineer - 1 profesional
+    - *Responsabilidades:* Automatizar el despliegue y la gestión de la infraestructura en AWS EC2, implementar pipelines de CI/CD, asegurar la disponibilidad y escalabilidad de la aplicación.
+    
+    - *Habilidades:* Conocimientos avanzados en AWS, Docker, CI/CD, scripting, monitoreo y gestión de infraestructura.
+
+e. Diseñador UX/UI - 1 profesional
+    - *Responsabilidades:* Diseñar la interfaz de usuario y la experiencia de usuario de la aplicación web, asegurando que sea intuitiva, atractiva y fácil de usar para los vendedores y clientes.
+    
+    - *Habilidades:* Conocimientos avanzados en diseño UX/UI, herramientas de diseño (Sketch, Figma, Adobe XD), prototipado, usabilidad, accesibilidad.
+
+f. Project Manager - 1 profesional
+    - *Responsabilidades:* Gestionar el equipo de desarrollo, coordinar las tareas y plazos, comunicarse con el cliente, asegurar la calidad y el cumplimiento de los requisitos del proyecto.
+    
+    - *Habilidades:* Experiencia en gestión de proyectos, metodologías ágiles (Scrum, Kanban), comunicación efectiva, resolución de conflictos, liderazgo.
+
+g. QA Engineer - 1 profesional
+    - *Responsabilidades:* Diseñar y ejecutar pruebas de software, identificar y reportar errores, asegurar la calidad y fiabilidad de la aplicación.
+    
+    - *Habilidades:* Conocimientos en pruebas de software, metodologías de pruebas, herramientas de automatización (Selenium, Cypress), reporte de bugs, seguimiento de incidencias.
+
+h. Especialista en Seguridad - 1 profesional
+    - *Responsabilidades:* Identificar vulnerabilidades de seguridad, implementar medidas de protección, asegurar la integridad y confidencialidad de los datos, cumplir con estándares de seguridad.
+    
+    - *Habilidades:* Conocimientos en ciberseguridad, auditorías de seguridad, protección de datos, criptografía, cumplimiento normativo, gestión de incidentes de seguridad.

@@ -1,0 +1,28 @@
+= Alcance del sistema
+
+== ¿Qué es el sistema? 
+
+El sistema es una plataforma de e-commerce para una cadena de tiendas de partes de computación y productos tecnológicos con varias sucursales en Chile. Permite a los clientes comprar productos en línea, mientras que los vendedores pueden gestionar ventas en tienda y solicitar productos entre las sucursales si no están disponibles localmente. Incluye un frontend desarrollado con React o Vue.js, un backend con Node.js y Express, y una base de datos PostgreSQL para gestionar productos, clientes, pedidos e inventarios. La infraestructura está alojada en AWS EC2, lo que permite escalar para manejar hasta 100,000 transacciones diarias.
+
+== ¿Qué no es el sistema?
+
+* Una plataforma exclusiva para vendedores. Está diseñada para ser usada tanto por clientes finales como por los empleados en las tiendas.
+* Una solución de e-commerce genérica. Está específicamente adaptada a una cadena de tiendas de partes de computación y productos tecnológicos, con funcionalidades particulares como la solicitud de productos entre tiendas.
+* Un sistema de gestión empresarial completo (ERP). Aunque maneja inventarios y ventas, no incluye módulos avanzados como la contabilidad o la gestión de recursos humanos.
+
+== ¿Qué hace el sistema?
+
+- Permite a los clientes comprar productos en línea de manera rápida y segura.
+- Ofrece a los clientes un catálogo de productos con opciones para comparar precios y características.
+- Permite a los vendedores realizar ventas tanto en la tienda física como en línea.
+- Facilita la solicitud de productos entre sucursales si no están disponibles en la tienda local.
+- Gestiona inventarios en tiempo real, asegurando que los productos estén correctamente actualizados.
+- Utiliza una arquitectura escalable en la nube, permitiendo manejar grandes volúmenes de transacciones diarias.
+- Proporciona un sistema de seguimiento de pedidos y actualización del estado de los envíos para los clientes.
+
+== ¿Qué no hace el sistema?
+
+- Sustituye a un ERP completo. No gestiona aspectos contables, fiscales o recursos humanos de la empresa.
+- No es una solución exclusivamente física. Aunque permite ventas en tiendas, está diseñado para la venta en línea y el manejo híbrido de ambos entornos.
+- No gestiona proveedores externos. Está centrado en la venta de productos ya disponibles en las tiendas, sin integrar la cadena de suministro completa.
+- No incluye funcionalidades avanzadas de marketing digital o CRM para el seguimiento exhaustivo de la relación con el cliente más allá de la venta.

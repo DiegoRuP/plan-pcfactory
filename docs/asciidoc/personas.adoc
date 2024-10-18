@@ -2,7 +2,7 @@
 
 == Persona Positiva: Cliente Leal
 
-image:https://img.freepik.com/vector-gratis/ilustracion-dedos-cruzados-dibujados-mano_23-2150212632.jpg?t=st=1729216984~exp=1729220584~hmac=543d30ab07e19b16e4b047e57aa0703817ca7a96f929bf1059fed2f2b1286043&w=1060
+image::../assets/images/persona-positiva.avif[Persona Positiva,200,100]
 
 - *Nombre:* Fernando
 - *Edad:* 30 años
@@ -25,7 +25,7 @@ image:https://img.freepik.com/vector-gratis/ilustracion-dedos-cruzados-dibujados
 
 == Persona Negativa: Cliente Desconfiado
 
-image:https://img.freepik.com/vector-gratis/ilustracion-dibujada-mano-palma-mano_23-2150212659.jpg?t=st=1729217204~exp=1729220804~hmac=9bf0e115257283b01f4c5ea642c598553f7d7d72cb0d12546fcdfc9f1544c27f&w=1060
+image::../assets/images/persona-negativa.avif[Persona Positiva,200,100]
 
 - *Nombre:* Carla
 - *Edad:* 45 años
@@ -44,3 +44,43 @@ image:https://img.freepik.com/vector-gratis/ilustracion-dibujada-mano-palma-mano
     * Sentirse segura y protegida en la compra
     * Evitar proporcionar información personal en línea
     * Atención personalizada en la tienda física
+
+== User Journey
+
+[plantuml, user-journey-diagram, png]
+----
+@startuml
+title User Journey - PCFactory
+
+actor Fernando as ClientLeal
+actor Carla as ClientDesconfiado
+
+ClientLeal -> Frontend : Busca información de productos
+Frontend -> Backend : Consulta API de productos
+Backend -> DB : Consulta inventario y descuentos
+
+ClientLeal -> Frontend : Compara productos
+Frontend -> Backend : Solicita asistencia por chat
+Backend -> DB : Actualiza inventario y stock
+
+ClientLeal -> Frontend : Realiza compra
+Frontend -> Backend : Validación de stock
+Backend -> DB : Actualización de stock
+
+ClientLeal -> Frontend : Sigue su pedido
+Frontend -> Backend : Consulta estado de entrega
+Backend -> DB : Registro de pedidos
+
+ClientDesconfiado -> Frontend : Visita tienda física
+Frontend -> Backend : Consulta stock en otras sucursales
+Backend -> DB : Consulta inventario en tiempo real
+
+ClientDesconfiado -> Frontend : Realiza compra en tienda
+Frontend -> Backend : Gestiona transacción
+Backend -> DB : Actualización del stock
+
+ClientDesconfiado -> Frontend : Consulta estado de pedido especial
+Frontend -> Backend : Información de entrega
+Backend -> DB : Actualización de estado
+@enduml
+----
