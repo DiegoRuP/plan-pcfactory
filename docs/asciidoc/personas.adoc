@@ -2,7 +2,7 @@
 
 == Persona Positiva: Cliente Leal
 
-image:positiva.png[Positiva,link=https://img.freepik.com/vector-gratis/ilustracion-dedos-cruzados-dibujados-mano_23-2150212632.jpg?t=st=1729216984~exp=1729220584~hmac=543d30ab07e19b16e4b047e57aa0703817ca7a96f929bf1059fed2f2b1286043&w=1060]
+image:https://img.freepik.com/vector-gratis/ilustracion-dedos-cruzados-dibujados-mano_23-2150212632.jpg?t=st=1729216984~exp=1729220584~hmac=543d30ab07e19b16e4b047e57aa0703817ca7a96f929bf1059fed2f2b1286043&w=1060[link="https://img.freepik.com/vector-gratis/ilustracion-dedos-cruzados-dibujados-mano_23-2150212632.jpg?t=st=1729216984~exp=1729220584~hmac=543d30ab07e19b16e4b047e57aa0703817ca7a96f929bf1059fed2f2b1286043&w=1060"]
 
 - *Nombre:* Fernando
 - *Edad:* 30 años
